@@ -91,6 +91,30 @@ private class AlphabetizerTest
   }
   
   
+  @isTest
+  static void test_incorrectComparator()
+  {
+    List<Alphabetizer.Result> results = buildTest('aaa', 'bbb', '', 'wrong-comparator');
+    system.assertEquals(1, results.size());
+  
+    system.assertEquals(false, results[0].success);
+    system.assertEquals(false, results[0].answer);
+    system.assertEquals('The comparator is invalid.', results[0].errorMessage);
+  }
+  
+  
+  @isTest
+  static void test_emptyComparator()
+  {
+    List<Alphabetizer.Result> results = buildTest('aaa', 'bbb', '', '');
+    system.assertEquals(1, results.size());
+    
+    system.assertEquals(false, results[0].success);
+    system.assertEquals(false, results[0].answer);
+    system.assertEquals('The comparator is invalid.', results[0].errorMessage);
+  }
+  
+  
   
   private static void assertIsTrue(String strValue1, String strValue2, String strComparator)
   {
