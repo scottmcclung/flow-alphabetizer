@@ -57,12 +57,12 @@ global class Alphabetizer
     
     private Boolean compare()
     {
-      if(comparator == Alphabetizer.Comparator.EQUALS && strValue1 == strValue2) return true;
-      if(comparator == Alphabetizer.Comparator.LESS_THAN && strValue1 < strValue2) return true;
-      if(comparator == Alphabetizer.Comparator.GREATER_THAN && strValue1 > strValue2) return true;
-      if(comparator == Alphabetizer.Comparator.LESS_THAN_EQUALS && strValue1 <= strValue2) return true;
-      if(comparator == Alphabetizer.Comparator.GREATER_THAN_EQUALS && strValue1 >= strValue2) return true;
-      if(comparator == Alphabetizer.Comparator.BETWEEN && strValue1 >= strValue2 && strValue1 <= strValue3) return true;
+      if(comparator == Alphabetizer.Comparator.EQUALS) return strValue1 == strValue2;
+      if(comparator == Alphabetizer.Comparator.LESS_THAN) return strValue1 < strValue2;
+      if(comparator == Alphabetizer.Comparator.GREATER_THAN) return strValue1 > strValue2;
+      if(comparator == Alphabetizer.Comparator.LESS_THAN_EQUALS) return strValue1 <= strValue2;
+      if(comparator == Alphabetizer.Comparator.GREATER_THAN_EQUALS) return strValue1 >= strValue2;
+      if(comparator == Alphabetizer.Comparator.BETWEEN) return strValue1 >= strValue2 && strValue1 <= strValue3;
       return false;
     }
     
